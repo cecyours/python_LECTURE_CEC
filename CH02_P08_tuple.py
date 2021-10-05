@@ -18,3 +18,5 @@ print("-------------------")
 
 for i in t:
 	print("====> ",i)
+
+print("data  : ",t[4])
