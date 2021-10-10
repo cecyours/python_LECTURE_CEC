@@ -7,6 +7,7 @@
 
 # print(type(x))
 #############################
+
 x = bool(["hello"])
 print(x,type(x))
 
