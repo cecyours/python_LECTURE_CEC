@@ -1,4 +1,4 @@
-//HELLO WORLD
+//HELLO WORL
 #include<iostream>
 #include<string>
 using namespace std;
