@@ -80,12 +80,13 @@ void book::buybook()	{
 int main()	{
 	book *B[20];
 	int i=0,r,t,choice;
+	char query[20];
 	char titlebuy[20],authorbuy[20];
 	me:
 	while(1)	{
 		fflush(stdin);
 		fflush(stdout);
-
+		// choice=0;
 		cout<<"\n\n\t\tMENU"
 		<<"\n1. Entry of New Book"
 		<<"\n2. Buy Book"
@@ -93,9 +94,15 @@ int main()	{
 		<<"\n4. Edit Details Of Book"
 		<<"\n5. Exit"
 		<<"\n\nEnter your Choice: ";
-	 	scanf("%d",&choice);
-	 	// if(!choice)
-	 		getchar();		
+		cin>>query;
+
+		if(strlen(query)!=1)
+			{
+				 cout<<"\nInvalid Choice Entered "<<endl;
+				goto me;
+			}
+		choice = int(query[0])-48;
+		cout<<"\nyou Entered "<<choice<<".\n";	
 		switch(choice)	{
 			case 1:	B[i] = new book;
 				B[i]->feeddata();
@@ -145,7 +152,7 @@ int main()	{
 				break;
 			
 			case 5: exit(0);
-			default: cout<<"\nInvalid Choice Entered";
+			default: cout<<"\nInvalid Choice Entered ....	"<<endl;
 			goto me;
 			
 		}
