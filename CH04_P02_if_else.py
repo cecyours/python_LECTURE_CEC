@@ -11,7 +11,7 @@ p = getpass.getpass("Enter the passwd : ")
 if p==passwd:
 	print("welcome")
 else:
-	print("passwd invalid...")
+	print("passwd invalid... \u2764")
 	m = Image.open(r"/home/you/Downloads/as.jpg")
 	m.show()
 
