@@ -15,7 +15,7 @@ int enqueue(int data) //insert
         }
     ind++;
     queue[ind] = data;
-    // printf("data %d : %d\n",ind,queue[ind]);
+    
 }
 
 int dequeue() //delete
