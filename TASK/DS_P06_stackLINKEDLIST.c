@@ -87,17 +87,33 @@ void display()
 int main()
 {
 
-    push(10);
-    push(20);
-    push(30);
-    push(40);
+int choice,data;
+   
+   printf("\n1 for push : ");
+   printf("\n2 for pop : "); 
+   printf("\n3 for peek : ");
+   printf("\n4 for display: "); 
+   printf("\n5 for exit : "); 
 
-    display();
-    peek();
-    pop();
-    pop();
-    peek();
-    display();
+   do{
+       printf("\nenter choice : ");
+       scanf("%d",&choice);
+
+            switch(choice)
+            {
+                case 1: 
+                    printf("enter the data : ");
+                    scanf("%d",&data);
+                    push(data);break;
+                case 2: pop();break;
+                case 3: peek();break;
+                case 4: display(); break;
+                case 5: exit(0);
+                default: printf("invalid choice try agai....");
+                    
+            }
+   }while(1);
+
 
 }
 
