@@ -49,7 +49,7 @@ void display()
      
      if(!head)
      {
-         printf("Queue is empty..⇄ ");
+         printf("Queue is empty..");
          return;
      }
 
