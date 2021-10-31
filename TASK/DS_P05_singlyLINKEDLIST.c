@@ -101,6 +101,7 @@ void insertSort()
 
 }
 
+/* - - -- -- - - -- - - -- - - -- */
 
 void display()
 {
@@ -112,23 +113,108 @@ void display()
     }
     temp = head;
 
-    printf("linked list : ");
+    printf("\nlinked list : ");
     while(temp->next)
     {
         printf("%d -> ",temp->data);
         temp = temp->next; //increment
     }
-    printf("%d.",temp->data);
+    printf("%d.\n\n",temp->data);
 
 }
 
+/* - - -- -- - - -- - - -- - - -- */
+
+void deleteFront(){
+    struct Node *temp;
+
+    if(!head)
+    {
+        printf("There is no node to delete..\n");
+        return;
+    }
+    printf("%d is deleted as first NOde deletion.. \n",head->data);
+    head = head->next;
+
+}
+void delete(int pos)
+{
+    int i=1;
+    struct Node *temp;
+
+    if(!head)
+    {
+        printf("no Node available..\n");
+        return;
+    }
+
+    if(pos==1)
+    {
+        head = head->next;
+        return;
+    }
+    else
+    {
+        temp = head;
+        // head = NULL;
+        while(temp)
+        {
+            printf("data : %d-%d\t",temp->data,i);
+            if(i+1 == pos)
+            {
+                temp->next = temp->next->next;
+              printf("data : %d-%d\t",temp->data,i);
+
+                // return;
+            }
+            temp = temp->next;
+            i++;
+        }
+        return;
+    }
+    printf("invalid position ...");
+
+}
 int main()
 {
-    
+   int choice,position;
+   
+   printf("\n1 for insert Front : ");
+   printf("\n2 for insert End : "); 
+   printf("\n3 for insert sort : ");
+   printf("\n4 for delete Front : "); 
+   printf("\n5 for before pos. : "); 
+   printf("\n6 for after pos. : "); 
+   printf("\n7 for display : "); 
+   printf("\n8 for exit : "); 
 
-    insertFront();
-    insertFront();
-    insertEnd();   
-    insertSort();  
-    display();
+   do{
+       printf("\nenter choice : ");
+       scanf("%d",&choice);
+
+            switch(choice)
+            {
+                case 1: insertFront();break;
+                case 2: insertEnd();break;
+                case 3: insertSort();break;
+                case 4: deleteFront(); break;
+                case 5: 
+                        printf("Enter the position to delete before position : ");
+                        scanf("%d",&position);
+                        delete(position-1); break;
+                case 6: 
+                        printf("Enter the position to delete after position : ");
+                        scanf("%d",&position);
+                        delete(position+1); break;
+                case 7: display(); break;
+                case 8: exit(0);
+                default: printf("invalid choice try agai....");
+                    
+            }
+   }while(1);
+
+
+
+
+
 }
