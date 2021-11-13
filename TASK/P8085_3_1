@@ -1,0 +1,6 @@
+LDA 5000H ;"10 , 5000h -> A"
+MOV B,A   ; "A->B so B=10"
+LDA 6000H ;"20 , 6000h -> A"
+STA 5000H ;"20 , A->5000h so 5000h=20"
+MOV A,B   ;"B->A , so A=10"
+STA 6000H ;"A->6000h ,so 6000h = 10"
