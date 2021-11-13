@@ -1,9 +1,11 @@
 LDA 2050H
 RAR
-JC ME
-MVI A,00H
+JC me
+MVI A,0H
 STA 2053H
 HLT
-ME:MVI A,01
+me: MVI A,1H
 STA 2053H
-HLT
+
+; 0H for even
+; 1H for odd
